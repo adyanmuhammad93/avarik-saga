@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './pages/home';
+import SearchResult from './pages/search-result';
+import Profile from './pages/profile';
+import ReadMe from './pages/read-me';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route
+              path="/"
+              element={
+                <>
+                  <div className="content__body">
+                    <span>You haven't seacrh anyone!</span>
+                  </div>
+                </>
+              }
+            />
+            <Route
+              path="/search"
+              element={
+                <>
+                  <div className="content__body">
+                    <span>You haven't seacrh anyone!</span>
+                  </div>
+                </>
+              }
+            />
+            <Route path="/search/:query" element={<SearchResult />} />
+          </Route>
+          <Route path="/user/:profile" element={<Profile />} />
+          <Route path="/user/:profile/:repo" element={<ReadMe />} />
+        </Routes>
+
+        <div className="content__foot">
+          <div className="card card--blank">This App built for Test</div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
