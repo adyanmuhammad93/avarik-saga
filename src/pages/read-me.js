@@ -14,7 +14,7 @@ function ReadMe() {
         setReadMe(data.content)
         console.log(data.content)
       })
-  }, [repo])
+  }, [profile, repo])
 
   const read = atob(readMe);
 
