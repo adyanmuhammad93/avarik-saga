@@ -14,7 +14,7 @@ function Profile() {
         setUser(data)
         console.log(data.avatar_url)
       })
-  }, [])
+  }, [profile])
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${profile}/repos`)
