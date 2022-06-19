@@ -12,7 +12,6 @@ function ReadMe() {
       .then((resp) => resp.json())
       .then((data) => {
         setReadMe(data.content)
-        console.log(data.content)
       })
   }, [profile, repo])
 

@@ -12,7 +12,6 @@ function Profile() {
       .then((resp) => resp.json())
       .then((data) => {
         setUser(data)
-        console.log(data.avatar_url)
       })
   }, [profile])
 
@@ -21,7 +20,6 @@ function Profile() {
       .then((resp) => resp.json())
       .then((data) => {
         setRepoList(data)
-        console.log(data)
       })
   }, [profile])
 

@@ -9,7 +9,6 @@ function SearchResult() {
       .then((resp) => resp.json())
       .then((data) => {
         setQueryList(data.items)
-        console.log(data.items)
       })
   }, [query])
   
